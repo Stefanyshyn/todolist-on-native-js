@@ -18,48 +18,55 @@
     </head>
 <body>
     <div class="container">
-        
-        <div class="container">
-            <form action="">
-                <div class="todo-form row">
-                    <div class="form-group">
-                        <input placeholder="Describe your task" type="text" name="todo" id="todo" class="form-control">
-                    </div>
-                    <div class="row">
-                        <div class='col-sm-12'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control" placeholder="Task end datetime" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
+        <form action="">
+            <div class="todo-form row">
+                <div class="form-group">
+                    <input placeholder="Describe your task" type="text" name="todo" id="todo" class="form-control">
+                </div>
+                <div class="row">
+                    <div class='col-sm-12'>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" placeholder="Task end datetime" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row" >
-                    <button type="button" class="btn btn-primary">Add ToDo</button>
-                </div>
-            </form>
-            <div class="task-feed row">
-                <div class="task-container">
+            </div>
+            <div class="row" >
+                <button type="button" class="btn btn-primary">Add ToDo</button>
+            </div>
+        </form>
+      
+        <div class="task-feed row">
 
-                    <table class="task">
-                        <tr>
-                            <th class="task-active-column">
-                                <div>
-                                    <input type="checkbox" placeholder="Username">
-                                </div>
-                            </th>
-                            <th>
-                                <div class="task-body">
-                                    <p class="task-body">Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something</p>
-                                </div>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
+            <div class="select-feed-task">
+                <select class="form-control" id="select">
+                    <option>All</option>
+                    <option>Completed</option>
+                    <option>Unfinished</option>
+                    </select>
+            </div>
+
+            <div class="task-container">
+                <table class="task">
+                    <tr>
+                        <th class="task-active-column">
+                            <div>
+                                <input type="checkbox" placeholder="Username">
+                            </div>
+                        </th>
+                        <th>
+                            <div class="task-body">
+                                <p class="task-body">Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something</p>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+                
             </div>
         </div>
       </div>

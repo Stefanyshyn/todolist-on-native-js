@@ -1,1 +1,2 @@
-const datepicker = require('./js/datepicker');
+import datepicker from './Datepicker/';
+

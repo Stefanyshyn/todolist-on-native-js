@@ -1,1 +1,1 @@
-console.log(1);
+const datepicker = require('./js/datepicker');

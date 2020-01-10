@@ -10,7 +10,6 @@ const createTask = () => {
 
 
 /*
-
 <table class="task">
     <tr>
         <th class="task-active-column">

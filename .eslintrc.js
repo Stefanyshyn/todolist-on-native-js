@@ -1,15 +1,10 @@
 module.exports = {
-    parser: "babel-eslint",
+    "parser": "babel-eslint",
     "env": {
       "browser": true,
       "es6": true,
-      "jest/globals": true
     },
     "extends": [
-      "eslint:recommended"
-    ],
-    "plugins": [
-      "jest"
     ],
     "rules": {
       "react/jsx-filename-extension": 'off',

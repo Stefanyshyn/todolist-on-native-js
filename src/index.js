@@ -1,3 +1,3 @@
-import server from './datepicker/';
-import front from './components/';
+import server from './utils/datepicker';
+import front from './components/Task';
 

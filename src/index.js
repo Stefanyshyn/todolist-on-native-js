@@ -1,4 +1,5 @@
 import server from './utils/datepicker';
+import faker from 'faker';
 import ModelTask from './models/task';
 
-ModelTask.insert({id:3});
+ModelTask.insert({id:faker.random.uuid()});

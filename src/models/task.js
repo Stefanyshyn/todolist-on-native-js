@@ -3,7 +3,7 @@ import Collection from '../utils/collection';
 class Task {
     collection = new Collection('task')
 
-    get = (selector) => _.orderBy(selector, ['DateEnd'], 'desc' );
+    get = (selector) => _.orderBy(this.collection.find({selector}), ['DateEnd'], 'desc' );
     insert = (task) => {
         this.collection.insert(task);
     }

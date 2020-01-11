@@ -11,10 +11,13 @@ class Collection{
         this._loadFromStorage();
     }
 
+    find = (selector) => {
+        return _.find(this.elements,selector);
+    }
+
     insert = (obj) => {
         this.elements = [...(this.elements), obj];
         this._saveToStorage();
-        console.log(...this.elements);
     }
 
     remove = (obj) => {

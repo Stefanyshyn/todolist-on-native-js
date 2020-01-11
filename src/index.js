@@ -1,3 +1,4 @@
 import server from './utils/datepicker';
-import front from './components/Task';
+import ModelTask from './models/task';
 
+ModelTask.insert({id:1});

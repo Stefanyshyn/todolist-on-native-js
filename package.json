@@ -8,7 +8,8 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --watch --mode production",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -43,7 +44,8 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.15",
-    "style-loader": "^1.1.2"
+    "style-loader": "^1.1.2",
+    "webpack-dev-server": "^3.10.1"
   },
   "config": {
     "commitizen": {

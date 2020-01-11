@@ -4,9 +4,7 @@ class Task {
     collection = new Collection('task')
 
     get = (selector) => _.orderBy(this.collection.find({selector}), ['DateEnd'], 'desc' );
-    insert = (task) => {
-        this.collection.insert(task);
-    }
+    insert = (task) => this.collection.insert(task);
     remove = (task) => collection.remove(task);
 }
 

@@ -1,4 +1,4 @@
 import server from './utils/datepicker';
 import ModelTask from './models/task';
 
-ModelTask.insert({id:1});
+ModelTask.insert({id:3});

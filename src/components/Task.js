@@ -1,10 +1,13 @@
 const createTask = () => {
     
     let task = document.createElement('table');
-     task.classList.add('task');
+    task.classList.add('task');
      
-      console.log(document.getElementsByClassName('task-container').append(task));  
+    console.log(document.getElementsByClassName('task-container').append(task));  
 }
+
+
+
 /*
 <table class="task">
     <tr>

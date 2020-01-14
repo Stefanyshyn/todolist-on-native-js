@@ -43,3 +43,7 @@ div.task-body{
 .task-date{
     width: 135px;
 }
+
+.alert {
+    display: none !important;
+}

@@ -57,7 +57,19 @@ div.task-body{
 }
 .alert {
     padding: 15px;
-    margin-bottom: 20px;
+    margin: 10px 0 10px 0;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+
+.alert-dismissible .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+}
+a.close {
+    text-decoration: none !important;
+    font-size: 18px !important;
+    line-height: 1.2;
 }

@@ -7,16 +7,17 @@ const Alert = (typeAlert, innerText) =>{
 
     let A = document.createElement('a');
     A.classList.add('close');
+    A.classList.add('alert-link');
     A.setAttribute('href', '#')
     A.setAttribute('data-dismiss', 'alert')
     A.setAttribute('aria-label', 'close')
     A.innerHTML = '&times;';
     
-    let Strong = document.createElement('strong');
-    Strong.innerHTML = innerText;
+    let Text = document.createElement('p');
+    Text.innerHTML = innerText;
 
-    Alert.append(Strong);
     Alert.append(A);
+    Alert.append(innerText);
 
     return Alert;
 }

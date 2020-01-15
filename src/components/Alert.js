@@ -1,15 +1,15 @@
 const Alert = (typeAlert, innerText) =>{
     let Alert = document.createElement('div');
     Alert.classList.add('alert');
+    Alert.classList.add('show');
     Alert.classList.add(typeAlert);
-    Alert.setAttribute('show', '')
 
     let A = document.createElement('a');
     A.classList.add('close');
     A.setAttribute('href', '#')
     A.setAttribute('data-dismiss', 'alert')
     A.setAttribute('aria-label', 'close')
-    A.innerText = '&times';
+    A.innerHTML = '&times;';
     
     let Strong = document.createElement('strong');
     Strong.innerText = innerText;

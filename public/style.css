@@ -10,6 +10,9 @@
 
 body{
     padding: 10px 5px 10px 5px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
 }
 
 .task-feed{
@@ -44,6 +47,17 @@ div.task-body{
     width: 135px;
 }
 
+.show {
+    display: block!important;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
 .alert {
-    display: none !important;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }

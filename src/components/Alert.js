@@ -2,6 +2,7 @@ const Alert = (typeAlert, innerText) =>{
     let Alert = document.createElement('div');
     Alert.classList.add('alert');
     Alert.classList.add('show');
+    Alert.classList.add('alert-dismissible');
     Alert.classList.add(typeAlert);
 
     let A = document.createElement('a');
@@ -12,9 +13,9 @@ const Alert = (typeAlert, innerText) =>{
     A.innerHTML = '&times;';
     
     let Strong = document.createElement('strong');
-    Strong.innerText = innerText;
+    Strong.innerHTML = innerText;
 
-    A.append(Strong);
+    Alert.append(Strong);
     Alert.append(A);
 
     return Alert;
@@ -34,6 +35,4 @@ const addAlert = (element, ...appends) => {
         }            
 };
 
-
-addAlert(1);
 export {Alert, addAlert};

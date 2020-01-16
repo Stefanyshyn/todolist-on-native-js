@@ -27,14 +27,9 @@ const Alert = (typeAlert, innerText) =>{
 const addAlert = (parent, ...appends) => {
     if(parent instanceof HTMLElement)
     {
-        let b = document.querySelector('#form-task .alert');
-        if(b)
-        console.log(
-            b.remove()
-        );
-        let a = _.remove(new Array(...parent), (item)=>{
-            return item.classList.contains('alert');
-        });
+        let Alert = document.querySelector('#form-task .alert');
+        if(Alert)
+            Alert.remove()
 
         if(parent === document.getElementById('form-task'))
         {

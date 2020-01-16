@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const Alert = (typeAlert, innerText) =>{
     let Alert = document.createElement('div');
     Alert.classList.add('alert');
@@ -22,18 +24,26 @@ const Alert = (typeAlert, innerText) =>{
     return Alert;
 }
 
-const addAlert = (element, ...appends) => {
-        if(element instanceof HTMLElement)
+const addAlert = (parent, ...appends) => {
+    if(parent instanceof HTMLElement)
+    {
+        let b = document.querySelector('#form-task .alert');
+        if(b)
+        console.log(
+            b.remove()
+        );
+        let a = _.remove(new Array(...parent), (item)=>{
+            return item.classList.contains('alert');
+        });
+
+        if(parent === document.getElementById('form-task'))
         {
-            if(element == document.getElementById('form-task'))
-            console.log(1);
-            if(element === document.getElementById('form-task'))
-            console.log(2);
-            appends.map((item)=>{
+            appends.forEach((item)=>{
             if(item instanceof HTMLElement || item instanceof string)
-                    element.appendChild(item);
+                parent.appendChild(item);
             });
-        }            
+        }
+    }            
 };
 
 export {Alert, addAlert};

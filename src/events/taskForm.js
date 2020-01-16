@@ -5,14 +5,21 @@ const addTask = ()=>{
     const btn = document.getElementById('btn-add');
     btn.addEventListener('click', (e)=>{        
         const _Alert = Alert();
-        
+        console.log('/');    
         if(!_Alert instanceof HTMLDivElement)
+        {
             return alert(_Alert);
+        }
+        let date = document.getElementById('task-date-input');
+        date = new Date(date.value || 0);
         
-        if(isEmpty() && !checkingDate()){
-            console.log(1);
-            return addAlert(document.getElementById('form-task'),Alert('alert-danger', 'Error!!! Pleace, Fills all fields'));
-        }        
+        console.log(isEmpty(), "***", !checkingDate(date));    
+        
+        if(isEmpty()){
+            return addAlert(document.getElementById('form-task'),Alert('alert-danger', 'Danger!!! Task describe is empty'));
+        }else if(!checkingDate(date)){
+            return addAlert(document.getElementById('form-task'),Alert('alert-danger', 'Danger!!! Date end task is empty or less now date'));
+        }
         return addAlert(document.getElementById('form-task'),Alert('alert-success', 'Successfull!'));
     })
 }
@@ -25,11 +32,8 @@ const isEmpty = ()=>{
     return false; 
 }
 
-const checkingDate = () => {
-    const dateElement = document.getElementById('task-date-input');
-    let date = new Date(dateElement.value || 0);
+const checkingDate = (date) => {
     date.setSeconds(date.getSeconds() + 30);
-
     if(new Date(date).getTime() < Date.now())
         return false;
     return true;

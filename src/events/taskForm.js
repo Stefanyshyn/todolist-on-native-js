@@ -3,7 +3,7 @@ import Task from '../components/Task';
 import ModelTask from '../models/task';
 
 const addTask = ()=>{
-    const btn = document.getElementById('btn-add');
+    const btn = document.getElementById('btn-add-task');
     btn.addEventListener('click', (e)=>{        
         const _Alert = Alert();
 

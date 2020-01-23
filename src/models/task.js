@@ -4,12 +4,7 @@ class Task {
     collection = new Collection('task')
 
     get = (selector) => {
-        console.log(selector);
-        console.log(this.collection.find());
-        console.log(this.collection.find(selector));
-        
-        return _.orderBy(this.collection.find(selector), ['date'], 'desc' );
-        
+        return _.orderBy(this.collection.find(selector));
     }
     
     insert = (task) => {

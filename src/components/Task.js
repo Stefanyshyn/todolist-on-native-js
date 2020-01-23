@@ -32,10 +32,10 @@ const createTask = (_tasks) => {
         }
 
         let container = document.getElementsByClassName('task-container');
-
         if(container && container.length > 0){
+            container[0].classList.remove('fade');
             tasksComponent.forEach((task)=>{
-                container[0].innerHTML += task;
+                container[0].innerHTML = task + container[0].innerHTML;
             })   
         } 
 }

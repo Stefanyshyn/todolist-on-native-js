@@ -46,7 +46,10 @@ div.task-body{
     width: 100px;
     max-width: 100px;
 }
-
+.task-remove{
+    width: 79px;
+    max-width: 79px;    
+}
 .show {
     display: block!important;
 }

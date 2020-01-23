@@ -12,13 +12,11 @@ class Collection{
     }
 
     find = (selector) => {
-        console.log(selector);
         return _.filter(this.elements, selector);
     }
 
     insert = (obj) => {
-        this.elements = [...(this.elements), obj];
-        console.log(this.elements);
+        this.elements = [obj, ...(this.elements)];
 
         this._saveToStorage();
     }

@@ -7,7 +7,6 @@ const createTask = (_tasks) => {
     if(!Array.isArray(tasks))
         tasks = new Array(tasks);
     for(let item of tasks){
-        console.log(1,tasks);
         let {taskBody, date} = item;
         let task = `<table class="task">
         <tr>
@@ -24,6 +23,11 @@ const createTask = (_tasks) => {
             <th class="task-date">
                 <div>
                     <span>${moment(date).format('MM/DD/YYYY hh:mm A')}</span>
+                </div>
+            </th>
+            <th class="task-remove">
+                <div>
+                    <button id='btn-task-revome' type="button" class="btn btn-danger">Remove</button> 
                 </div>
             </th>
         </tr>

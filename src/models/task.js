@@ -3,8 +3,20 @@ import Collection from '../utils/collection';
 class Task {
     collection = new Collection('task')
 
-    get = (selector) => _.orderBy(this.collection.find({selector}), ['DateEnd'], 'desc' );
-    insert = (task) => this.collection.insert(task);
+    get = (selector) => {
+        console.log(selector);
+        console.log(this.collection.find());
+        console.log(this.collection.find(selector));
+        
+        return _.orderBy(this.collection.find(selector), ['date'], 'desc' );
+        
+    }
+    
+    insert = (task) => {
+        console.log(task);
+        return this.collection.insert(task);
+    }
+
     remove = (task) => collection.remove(task);
 }
 

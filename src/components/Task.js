@@ -1,10 +1,15 @@
 import moment from 'moment';
+import ModelsTask from '../models/task';
 
-const createTask = (task) => {
-    const [taskBody, date] = task;    
-    console.log(task);
-    console.log(taskBody, "   ", date);
-    let a = `<table class="task">
+const createTask = (_tasks) => {
+    let tasksComponent = [];
+    let tasks = _tasks;
+    if(!Array.isArray(tasks))
+        tasks = new Array(tasks);
+    for(let item of tasks){
+        console.log(1,tasks);
+        let {taskBody, date} = item;
+        let task = `<table class="task">
         <tr>
             <th class="task-active-column">
                 <div>
@@ -16,20 +21,22 @@ const createTask = (task) => {
                     <p class="task-body">${taskBody}</p>
                 </div>
             </th>
-            <th>
-                <div class="task-date">
+            <th class="task-date">
+                <div>
                     <span>${moment(date).format('MM/DD/YYYY hh:mm A')}</span>
-                    </div>
+                </div>
             </th>
         </tr>
-    </table>`;
-    let container = document.getElementsByClassName('task-container');
-    console.log(container);
-    if(container && container.length >= 0)
-    {
-        console.log(container[0]
-        .innerHTML += a);  
-    }
-}
+        </table>`;
+            tasksComponent = [...tasksComponent, task];
+        }
 
+        let container = document.getElementsByClassName('task-container');
+
+        if(container && container.length > 0){
+            tasksComponent.forEach((task)=>{
+                container[0].innerHTML += task;
+            })   
+        } 
+}
 export default createTask;

@@ -1,5 +1,6 @@
 import {Alert, addAlert} from '../components/Alert';
 import Task from '../components/Task';
+import ModelTask from '../models/task';
 
 const addTask = ()=>{
     const btn = document.getElementById('btn-add');
@@ -22,8 +23,10 @@ const addTask = ()=>{
             return addAlert(document.getElementById('form-task'),Alert('alert-danger', 'Danger!!! Date end task is empty or less now date'));
         }
         
+        
         addAlert(document.getElementById('form-task'),Alert('alert-success', 'Successfull!'));
-        Task([taskBody, date]);
+        Task({taskBody, date});
+        ModelTask.insert({taskBody, date});
         return;
     })
 }

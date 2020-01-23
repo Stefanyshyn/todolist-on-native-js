@@ -1,5 +1,4 @@
 import server from './utils/datepicker';
-import faker from 'faker';
+import faker from './events/taskForm';
 import ModelTask from './models/task';
-
-import a from './events/taskForm';
+import loadTask from './events/loadTask';

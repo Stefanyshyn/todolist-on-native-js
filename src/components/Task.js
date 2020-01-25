@@ -1,7 +1,9 @@
 import moment from 'moment';
 import ModelsTask from '../models/task';
+import {removeTask} from '../events/taskFeed';
 
 const createTask = (_tasks) => {
+    let i = 0;
     let tasksComponent = [];
     let tasks = _tasks;
     if(!Array.isArray(tasks))
@@ -27,20 +29,24 @@ const createTask = (_tasks) => {
             </th>
             <th class="task-remove">
                 <div>
-                    <button id='btn-task-revome' type="button" class="btn btn-danger">Remove</button> 
+                    <button class='btn-task-revome btn btn-danger' type="button" >Remove${i++}</button> 
                 </div>
             </th>
         </tr>
         </table>`;
-            tasksComponent = [...tasksComponent, task];
-        }
+        tasksComponent = [...tasksComponent, task];
+    }
 
-        let container = document.getElementsByClassName('task-container');
-        if(container && container.length > 0){
-            container[0].classList.remove('fade');
-            tasksComponent.forEach((task)=>{
-                container[0].innerHTML = task + container[0].innerHTML;
-            })   
-        } 
-}
+    let container = document.getElementsByClassName('task-container');
+    if(container && container.length > 0){
+        container[0].classList.remove('fade');
+        tasksComponent.forEach((task)=>{
+            container[0].innerHTML = task + container[0].innerHTML; 
+        })
+        const btns = document.getElementsByClassName('btn-task-revome');
+        for(let i = 0; i < btns.length; i++){
+            btns[i].addEventListener('click', removeTask);
+        }
+    }
+} 
 export default createTask;

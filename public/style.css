@@ -13,6 +13,19 @@ form, .task-feed{
 .task-feed:last-child{
     border: none;
 }
+#control-task{
+    display: flex;
+}
+#select-feed-task{
+    flex-grow: 1;
+}
+#btn-refresh{
+    padding: 0px;
+}
+#btn-refresh>img{
+    max-width: 32px;
+}
+
 #task-container{
     margin-top: 15px;
     border: 1px solid #ccc;
@@ -42,7 +55,7 @@ p.task-body{
 div.task-body{
     padding: 5px 10px 0px 10px;
 }
-.task-date{
+.task-date-column{
     width: 100px;
     max-width: 100px;
 }

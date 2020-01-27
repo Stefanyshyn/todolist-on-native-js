@@ -25,9 +25,9 @@ const createTask = (_tasks) => {
                     <p class="task-body">${taskBody}</p>
                 </div>
             </th>
-            <th class="task-date">
+            <th class="task-date-column">
                 <div>
-                    <span>${moment(date).format('MM/DD/YYYY hh:mm A')}</span>
+                    <span id="task-date">${moment(date).format('MM/DD/YYYY hh:mm A')}</span>
                 </div>
             </th>
             <th class="task-remove">

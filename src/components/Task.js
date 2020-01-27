@@ -1,20 +1,23 @@
 import moment from 'moment';
 import ModelsTask from '../models/task';
-import {removeTask} from '../events/taskFeed';
+import {removeTask,checkTask} from '../events/taskFeed';
+
+const container = document.getElementById('task-container');
+const checkboxs = document.getElementsByClassName('task-active');
+const btns = document.getElementsByClassName('btn-task-revome');
 
 const createTask = (_tasks) => {
-    let i = 0;
     let tasksComponent = [];
     let tasks = _tasks;
     if(!Array.isArray(tasks))
         tasks = new Array(tasks);
     for(let item of tasks){
         let {taskBody, date} = item;
-        let task = `<table class="task">
+        const task = `<table class="task">
         <tr>
             <th class="task-active-column">
                 <div>
-                    <input type="checkbox">
+                    <input type="checkbox" class="task-active">
                 </div>
             </th>
             <th>
@@ -29,24 +32,26 @@ const createTask = (_tasks) => {
             </th>
             <th class="task-remove">
                 <div>
-                    <button class='btn-task-revome btn btn-danger' type="button" >Remove${i++}</button> 
+                    <button class='btn-task-revome btn btn-danger' type="button" >Remove</button> 
                 </div>
             </th>
         </tr>
         </table>`;
         tasksComponent = [...tasksComponent, task];
     }
-
-    let container = document.getElementsByClassName('task-container');
-    if(container && container.length > 0){
-        container[0].classList.remove('fade');
-        tasksComponent.forEach((task)=>{
-            container[0].innerHTML = task + container[0].innerHTML; 
-        })
-        const btns = document.getElementsByClassName('btn-task-revome');
-        for(let i = 0; i < btns.length; i++){
-            btns[i].addEventListener('click', removeTask);
-        }
+    
+    console.log(1);
+    if(!container) return;
+    console.log(2);
+    container.classList.remove('fade');
+    tasksComponent.forEach((task)=>{
+        container.innerHTML = task + container.innerHTML; 
+    })
+    console.log(3);
+    for(let i = 0; i < btns.length; i++){
+        btns[i].addEventListener('click', removeTask);
+        checkboxs[i].addEventListener('change', checkTask);
     }
+    console.log(4);
 } 
 export default createTask;

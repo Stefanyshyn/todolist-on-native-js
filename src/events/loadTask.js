@@ -1,10 +1,11 @@
 import ModelTask from '../models/task'
 import Task from '../components/Task';
-import {removeTask} from '../events/taskFeed';
+import {refresh} from '../events/controlTaskFeed';
 
 const loadTask = () => {
     const tasks = ModelTask.get();
     Task(tasks);
+    refresh();
 }
 
 loadTask();

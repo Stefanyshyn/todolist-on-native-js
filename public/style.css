@@ -1,5 +1,5 @@
 body{
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Arial Black", Gadget, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
 }
@@ -25,43 +25,55 @@ form, .task-feed{
 #btn-refresh>img{
     max-width: 32px;
 }
-
+.warning-deadline{
+    background-color: #f7ff7f;
+}
+.danger-deadline{
+    background-color: #ff8383;
+}
 #task-container{
     margin-top: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
-table{
-    border-spacing: 0;
-    border-collapse:collapse;
-}
-.task, .task tr{
     width: 100%;
 }
+
 .task{
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    display: flex;
     border-bottom: 1px solid #ccc;
 }
 .task-active-column{
     background-color: #e9ecef;
-    padding: 0 10px 0 10px;
-    width: 35px;
-    max-width: 35px;
+    flex-basis: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-p.task-body{
-    padding-left: 5px;
+.task-active{
+    margin: 0 !important;
 }
-
-div.task-body{
-    padding: 5px 10px 0px 10px;
+.task-body-column{
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    min-width: 0; 
+}
+.task-body-column>div{
+    word-wrap: break-word;
 }
 .task-date-column{
-    width: 100px;
-    max-width: 100px;
+    flex-basis: 100px;
 }
 .task-remove{
-    width: 79px;
-    max-width: 79px;    
+    flex-basis: 79px;
+}
+.task-remove>button{
+    height: 100%;
 }
 .show {
     display: block!important;

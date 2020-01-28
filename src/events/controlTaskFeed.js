@@ -1,3 +1,5 @@
+import {loadTask} from '../load/loadTask';
+
 const container = document.getElementById('task-container');
 const dates = document.getElementsByClassName('task-date');
 
@@ -6,8 +8,6 @@ const DEADLINE_TIME_COMLETED = 2*60*60*1000;
 const degreeDeadlineTask = (e)=>{
     const tasks = container.children;
     if(!tasks) return;
-
-    console.log(dates);
     for(let i = 0; i < tasks.length; ++i){
         let date = Date.now() + DEADLINE_TIME_COMLETED;
         let taskDate = new Date(dates[i].innerText).getTime();
@@ -22,8 +22,15 @@ const degreeDeadlineTask = (e)=>{
     }
 }
 
+const changeTypeSelectTask = ()=>{
+    refresh();
+}
+
+
 const refresh = ()=>{
+    container.innerHTML = '';    
+    loadTask();
     degreeDeadlineTask();
 }
 
-export {degreeDeadlineTask, refresh};
+export {degreeDeadlineTask, refresh, changeTypeSelectTask};

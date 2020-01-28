@@ -1,3 +1,4 @@
+import ModelsTask from '../models/task';
 const select  = document.getElementById('select');
 const container = document.getElementById('task-container');
 
@@ -8,6 +9,7 @@ const removeTask = function(e){
     let p = e.target.parentElement.parentElement.parentElement;
     let c = e.target.parentElement.parentElement;        
     p.removeChild(c);
+    ModelsTask.remove({});
 };
 
 const checkTask = (e)=>{

@@ -1,7 +1,5 @@
 import moment from 'moment';
-import ModelsTask from '../models/task';
 import {removeTask,checkTask} from '../events/taskFeed';
-import {degreeDeadlineTask} from '../events/controlTaskFeed';
 
 const container = document.getElementById('task-container');
 const checkboxs = document.getElementsByClassName('task-active');
@@ -13,10 +11,10 @@ const createTask = (_tasks) => {
     if(!Array.isArray(tasks))
         tasks = new Array(tasks);
     for(let item of tasks){
-        let {taskBody, date} = item;
+        let {active, taskBody, date} = item;
         const task = `<div class="task">
             <div class="task-active-column">
-                <input type="checkbox" class="task-active">
+                <input type="checkbox" class="task-active" ${!active?'checked':''}>
             </div>
             <div class="task-body-column">
                 <div>
@@ -35,7 +33,9 @@ const createTask = (_tasks) => {
         tasksComponent = [...tasksComponent, task];
     }
     if(!container) return;
-    container.classList.remove('fade');
+    else if(container.classList.contains('fade') && tasksComponent.length > 0) {
+        container.classList.remove('fade');
+    }
     tasksComponent.forEach((task)=>{
         container.innerHTML = task + container.innerHTML; 
     })

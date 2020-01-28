@@ -16,7 +16,7 @@ class Collection{
     }
 
     insert = (obj) => {
-        this.elements = [obj, ...(this.elements)];
+        this.elements = [...(this.elements),obj];
 
         this._saveToStorage();
     }

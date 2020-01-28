@@ -25,7 +25,7 @@ const addTask = ()=>{
         
         addAlert(document.getElementById('form-task'),Alert('alert-success', 'Successfull!'));
         Task({taskBody, date});
-        ModelTask.insert({taskBody, date});
+        ModelTask.insert({active: true, taskBody, date});
         return;
     })
 }

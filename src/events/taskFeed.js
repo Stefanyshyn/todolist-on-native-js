@@ -2,14 +2,17 @@ import ModelsTask from '../models/task';
 const select  = document.getElementById('select');
 const container = document.getElementById('task-container');
 
-const removeTask = function(e){
-    if(container.children.length === 1){
-        container.classList.add('fade');
-    }    
-    let p = e.target.parentElement.parentElement.parentElement;
-    let c = e.target.parentElement.parentElement;        
-    p.removeChild(c);
-    ModelsTask.remove({});
+const removeTask =(task)=>{
+    return function(e){
+        if(container.children.length === 1){
+            container.classList.add('fade');
+        }    
+        let p = e.target.parentElement.parentElement.parentElement;
+        let taskDom = e.target.parentElement.parentElement;        
+        let active = taskDom.children[0].children[0].value;
+        
+        ModelsTask.remove({ id: task.id });
+    }
 };
 
 const checkTask = (e)=>{

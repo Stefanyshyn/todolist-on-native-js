@@ -1,5 +1,5 @@
 import _ from 'lodash';
-
+import uuid from 'uuid/v4';
 class Collection{
     elements = [];
     /**
@@ -15,7 +15,12 @@ class Collection{
         return _.filter(this.elements, selector);
     }
 
-    insert = (obj) => {
+    insert = (_obj) => {
+        const obj = { ..._obj }
+
+        if( !('id' in obj)){
+            obj.id = uuid();
+        }
         this.elements = [...(this.elements),obj];
 
         this._saveToStorage();

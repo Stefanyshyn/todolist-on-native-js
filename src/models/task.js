@@ -7,7 +7,7 @@ class Task {
     
     insert = (task) => this.collection.insert(task);
 
-    remove = (task) => collection.remove(task);
+    remove = (task) => this.collection.remove(task);
 }
 
 export default new Task();

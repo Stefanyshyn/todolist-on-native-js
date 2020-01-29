@@ -26,7 +26,6 @@ const changeTypeSelectTask = ()=>{
     refresh();
 }
 
-
 const refresh = ()=>{
     container.innerHTML = '';    
     loadTask();

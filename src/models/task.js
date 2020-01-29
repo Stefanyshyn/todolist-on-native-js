@@ -8,6 +8,8 @@ class Task {
     insert = (task) => this.collection.insert(task);
 
     remove = (task) => this.collection.remove(task);
+
+    edit = (selector, source)=> this.collection.edit(selector, source);
 }
 
 export default new Task();

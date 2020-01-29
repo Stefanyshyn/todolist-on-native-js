@@ -31,6 +31,14 @@ class Collection{
         this._saveToStorage();
     }
 
+    edit = (selector, source)=>{
+        this.find(selector).forEach((item)=>{
+            _.merge(item, source);
+        })
+        console.log(this.find(selector), source);
+        this._saveToStorage();
+    }
+
     _saveToStorage = () => {
         localStorage.setItem(`__collection__${this.name}`, JSON.stringify(this.elements));
     }

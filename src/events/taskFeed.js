@@ -7,25 +7,28 @@ const removeTask =(task)=>{
         if(container.children.length === 1){
             container.classList.add('fade');
         }    
-        let p = e.target.parentElement.parentElement.parentElement;
         let taskDom = e.target.parentElement.parentElement;        
-        let active = taskDom.children[0].children[0].value;
-        
+
+        container.removeChild(taskDom);        
         ModelsTask.remove({ id: task.id });
     }
 };
 
-const checkTask = (e)=>{
-    if(!select) return;
-    if(select.value.toString().toLowerCase() === 'unfinished'){
-        const task = e.target.parentElement.parentElement;
+const checkTask = (task)=>{
+    return(e)=>{
+        let taskActive = e.target.checked;
         
-        if (task && e.target.checked) {
-            task.parentNode.removeChild(task);
+        if(!select) return;
+        if(select.value === 'Unfinished' && select.value === 'Completed'){
+            const task = e.target.parentElement.parentElement;
+            if (task && taskActive) {
+                task.parentNode.removeChild(task);
+            }
+            if(container.children.length === 0 ){
+                container.classList.add('fade');
+            }
         }
-        if(container.children.length === 0 ){
-            container.classList.add('fade');
-        }
+        ModelsTask.edit({id:task.id}, {active: !taskActive})
     }
 }
 

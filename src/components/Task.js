@@ -41,7 +41,7 @@ const createTask = (_tasks) => {
     })
     for(let i = 0; i < btns.length; i++){
         btns[i].addEventListener('click', removeTask(tasks[i]));
-        checkboxs[i].addEventListener('change', checkTask);
+        checkboxs[i].addEventListener('change', checkTask(tasks[i]));
     }
 
 } 
